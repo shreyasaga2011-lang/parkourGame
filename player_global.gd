@@ -3,13 +3,14 @@ extends Node
 var alive = true
 
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 func _process(delta: float) -> void:
 	pass
 
 func makeDead():
-	var alive = false
+	get_tree().change_scene("res://node_2d.tscn")
 
 func makeAlive():
 	var alive = true
+	

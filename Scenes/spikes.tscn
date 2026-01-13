@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcbcly7jhv0gb"]
 
 [ext_resource type="Texture2D" uid="uid://dixenypaxgtap" path="res://icon.svg" id="1_a5dqs"]
-[ext_resource type="Script" uid="uid://4ctkir2n5tlg" path="res://scenes/spikes.gd" id="1_gwqs2"]
+[ext_resource type="Script" uid="uid://4ctkir2n5tlg" path="res://Scenes/spikes.gd" id="1_gwqs2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5dqs"]
 size = Vector2(121, 121)
 
 [node name="Spikes" type="Area2D" groups=["enemy"]]
+collision_mask = 2
 script = ExtResource("1_gwqs2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
