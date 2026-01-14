@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bni5wcmgp3ci3"
-path="res://.godot/imported/squareTileset.png-71d826ae2ebdba7234778407e1a8780e.ctex"
+uid="uid://cbquusdt53dpt"
+path="res://.godot/imported/StoneGate.png-4c346bd7222f461cf57512726cfeed90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/squareTileset.png"
-dest_files=["res://.godot/imported/squareTileset.png-71d826ae2ebdba7234778407e1a8780e.ctex"]
+source_file="res://Assets/StoneGate.png"
+dest_files=["res://.godot/imported/StoneGate.png-4c346bd7222f461cf57512726cfeed90.ctex"]
 
 [params]
 

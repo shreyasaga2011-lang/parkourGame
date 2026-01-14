@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bni5wcmgp3ci3"
-path="res://.godot/imported/squareTileset.png-71d826ae2ebdba7234778407e1a8780e.ctex"
+uid="uid://cu00ge78tlqw6"
+path="res://.godot/imported/Ram Deco All.png-54f54da906c0b2e7ba1dd712f2c24d06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/squareTileset.png"
-dest_files=["res://.godot/imported/squareTileset.png-71d826ae2ebdba7234778407e1a8780e.ctex"]
+source_file="res://Assets/Custom Border and Panels Menu All Part/Ram Deco All.png"
+dest_files=["res://.godot/imported/Ram Deco All.png-54f54da906c0b2e7ba1dd712f2c24d06.ctex"]
 
 [params]
 

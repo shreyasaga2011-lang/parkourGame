@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bni5wcmgp3ci3"
-path="res://.godot/imported/squareTileset.png-71d826ae2ebdba7234778407e1a8780e.ctex"
+uid="uid://bre47b7f21lwl"
+path="res://.godot/imported/Border All 7.png-574ab1ee93907c4fa1a04a1a42a0e042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/squareTileset.png"
-dest_files=["res://.godot/imported/squareTileset.png-71d826ae2ebdba7234778407e1a8780e.ctex"]
+source_file="res://Assets/Custom Border and Panels Menu All Part/Border All 7.png"
+dest_files=["res://.godot/imported/Border All 7.png-574ab1ee93907c4fa1a04a1a42a0e042.ctex"]
 
 [params]
 
