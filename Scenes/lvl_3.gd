@@ -1,6 +1,7 @@
 extends Button
 
 func _ready():
+	visible = false
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(0, 0, 0, 0)
 	style.border_width_left = 0
@@ -10,7 +11,6 @@ func _ready():
 	for s in ["normal", "hover", "pressed", "focus", "disabled"]:
 		add_theme_stylebox_override(s, style)
 
-
-func _on_pressed() -> void:
-	changeLevelGlobal.changeCurrentLevelToThree()
-	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
+func _physics_process(delta: float) -> void:
+	if changeLevelGlobal.levelTwoComplete == true:
+		visible = true

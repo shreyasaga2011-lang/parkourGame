@@ -10,16 +10,15 @@ config_version=5
 
 [application]
 
-config/name="parkourGame"
-run/main_scene="res://Scenes/start_menu.tscn"
+run/main_scene="uid://ditkhf1urhp6q"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 playerGlobal="*res://player_global.gd"
-TutorialWords="*res://tutorial_words.gd"
 changeLevelGlobal="*res://change_level_global.gd"
+TutorialWords="*res://tutorial_words.gd"
 
 [editor_plugins]
 

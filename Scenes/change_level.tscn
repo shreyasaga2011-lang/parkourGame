@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3c3ahlw5ur13"]
+[gd_scene load_steps=14 format=3 uid="uid://d3c3ahlw5ur13"]
 
 [ext_resource type="Texture2D" uid="uid://c1716bmewbm6b" path="res://Assets/Custom Border and Panels Menu All Part/Border All 6.png" id="1_wg3pw"]
 [ext_resource type="Texture2D" uid="uid://bocr04yl3gqeo" path="res://Assets/Custom Border and Panels Menu All Part/Deco All 6.png" id="2_0jjpd"]
 [ext_resource type="Script" uid="uid://bmbstirbcouus" path="res://scripts/quit.gd" id="3_0jjpd"]
+[ext_resource type="Script" uid="uid://dex2db4apo6vs" path="res://Scenes/node_2d.gd" id="3_kyb5r"]
 [ext_resource type="FontFile" uid="uid://b8ge1sowthmnf" path="res://Assets/cormorant-sc-bold-font/cormorantsc-bold.ttf" id="3_mcwum"]
 [ext_resource type="Script" uid="uid://xn8sy25xs28" path="res://scripts/lvl_1.gd" id="4_hfpf6"]
 [ext_resource type="Script" uid="uid://mdr4tn7dme16" path="res://Scenes/lvl_2.gd" id="5_3t6vc"]
@@ -1670,7 +1671,10 @@ tile_set = SubResource("TileSet_hfpf6")
 format = 2
 layer_0/tile_data = PackedInt32Array(131075, 786432, 13, 196611, 786432, 14, 262147, 786432, 15, 589827, 786432, 13, 655363, 786432, 14, 720899, 786432, 15, 131076, 851968, 13, 196612, 851968, 14, 262148, 851968, 15, 589828, 851968, 13, 655364, 851968, 14, 720900, 851968, 15, 131077, 917504, 13, 196613, 917504, 14, 262149, 917504, 15, 589829, 917504, 13, 655365, 917504, 14, 720901, 917504, 15, 131078, 917504, 13, 196614, 917504, 14, 262150, 917504, 15, 589830, 917504, 13, 655366, 917504, 14, 720902, 917504, 15, 131079, 983040, 13, 196615, 983040, 14, 262151, 983040, 15, 589831, 983040, 13, 655367, 983040, 14, 720903, 983040, 15, 131083, 786432, 13, 196619, 786432, 14, 262155, 786432, 15, 589835, 786432, 13, 655371, 786432, 14, 720907, 786432, 15, 131084, 851968, 13, 196620, 851968, 14, 262156, 851968, 15, 589836, 851968, 13, 655372, 851968, 14, 720908, 851968, 15, 131085, 917504, 13, 196621, 917504, 14, 262157, 917504, 15, 589837, 917504, 13, 655373, 917504, 14, 720909, 917504, 15, 131086, 917504, 13, 196622, 917504, 14, 262158, 917504, 15, 589838, 917504, 13, 655374, 917504, 14, 720910, 917504, 15, 131087, 983040, 13, 196623, 983040, 14, 262159, 983040, 15, 589839, 983040, 13, 655375, 983040, 14, 720911, 983040, 15, 131091, 786432, 13, 196627, 786432, 14, 262163, 786432, 15, 589843, 786432, 13, 655379, 786432, 14, 720915, 786432, 15, 131092, 851968, 13, 196628, 851968, 14, 262164, 851968, 15, 589844, 851968, 13, 655380, 851968, 14, 720916, 851968, 15, 131093, 917504, 13, 196629, 917504, 14, 262165, 917504, 15, 589845, 917504, 13, 655381, 917504, 14, 720917, 917504, 15, 131094, 917504, 13, 196630, 917504, 14, 262166, 917504, 15, 589846, 917504, 13, 655382, 917504, 14, 720918, 917504, 15, 131095, 983040, 13, 196631, 983040, 14, 262167, 983040, 15, 589847, 983040, 13, 655383, 983040, 14, 720919, 983040, 15, 65539, 786432, 12, 524291, 786432, 12, 65540, 851968, 12, 524292, 851968, 12, 65541, 917504, 12, 524293, 917504, 12, 65542, 917504, 12, 524294, 917504, 12, 65543, 983040, 12, 524295, 983040, 12, 65547, 786432, 12, 524299, 786432, 12, 65548, 851968, 12, 524300, 851968, 12, 65549, 917504, 12, 524301, 917504, 12, 65550, 917504, 12, 524302, 917504, 12, 65551, 983040, 12, 524303, 983040, 12, 65555, 786432, 12, 524307, 786432, 12, 65556, 851968, 12, 524308, 851968, 12, 65557, 917504, 12, 524309, 917504, 12, 65558, 917504, 12, 524310, 917504, 12, 65559, 983040, 12, 524311, 983040, 12)
 
-[node name="Lvl1" type="Button" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_kyb5r")
+
+[node name="Lvl1" type="Button" parent="Node2D"]
 offset_left = 306.0
 offset_top = 122.0
 offset_right = 748.0
@@ -1680,33 +1684,59 @@ theme_override_font_sizes/font_size = 64
 text = "level 1"
 script = ExtResource("4_hfpf6")
 
-[node name="Lvl2" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Lvl2" type="Button" parent="Node2D"]
+offset_left = 1097.0
+offset_top = 129.0
+offset_right = 1491.0
+offset_bottom = 433.0
+theme_override_fonts/font = ExtResource("3_mcwum")
+theme_override_font_sizes/font_size = 64
+text = "level 2"
 script = ExtResource("5_3t6vc")
 
-[node name="Lvl3" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Lvl3" type="Button" parent="Node2D"]
+offset_left = 1858.0
+offset_top = 135.0
+offset_right = 2267.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("3_mcwum")
+theme_override_font_sizes/font_size = 64
+text = "level 3"
 script = ExtResource("6_kyb5r")
 
-[node name="Lvl4" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Lvl4" type="Button" parent="Node2D"]
+offset_left = 330.0
+offset_top = 806.0
+offset_right = 726.0
+offset_bottom = 1106.0
+theme_override_fonts/font = ExtResource("3_mcwum")
+theme_override_font_sizes/font_size = 64
+text = "level 4"
 script = ExtResource("7_dcoj2")
 
-[node name="Lvl5" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Lvl5" type="Button" parent="Node2D"]
+offset_left = 1092.0
+offset_top = 799.0
+offset_right = 1502.0
+offset_bottom = 1110.0
+theme_override_fonts/font = ExtResource("3_mcwum")
+theme_override_font_sizes/font_size = 64
+text = "level 5"
 script = ExtResource("8_t7wl2")
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="Node2D"]
 texture_filter = 1
 offset_left = 1844.0
 offset_top = 789.0
 offset_right = 2271.0
 offset_bottom = 1112.0
+theme_override_fonts/font = ExtResource("3_mcwum")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 script = ExtResource("3_0jjpd")
 
-[connection signal="pressed" from="Lvl1" to="Lvl1" method="_on_pressed"]
+[connection signal="pressed" from="Node2D/Lvl1" to="Node2D" method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="Node2D/Lvl2" to="Node2D" method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="Node2D/Lvl3" to="Node2D" method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="Node2D/Lvl4" to="Node2D" method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="Node2D/Lvl5" to="Node2D" method="_on_lvl_5_pressed"]

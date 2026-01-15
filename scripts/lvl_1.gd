@@ -10,8 +10,6 @@ func _ready():
 	style.border_width_bottom = 0
 	for s in ["normal", "hover", "pressed", "focus", "disabled"]:
 		add_theme_stylebox_override(s, style)
-
-
-func _on_pressed() -> void:
-	changeLevelGlobal.changeCurrentLevelToOne()
-	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
+func _physics_process(delta: float) -> void:
+	if changeLevelGlobal.levelOneComplete == true:
+		visible = true

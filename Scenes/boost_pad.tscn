@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjpx4xmg3jwjh"]
+
+[ext_resource type="Script" uid="uid://b5ijv77tg2s7q" path="res://scripts/boost_pad.gd" id="1_rjw2q"]
+[ext_resource type="Texture2D" uid="uid://boime27l20w40" path="res://Assets/JumpPad.png" id="2_4ju1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ju1x"]
+size = Vector2(34, 6)
+
+[node name="BoostPad" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_rjw2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ju1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -14)
+texture = ExtResource("2_4ju1x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
