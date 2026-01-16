@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3c3ahlw5ur13"]
+[gd_scene load_steps=15 format=3 uid="uid://d3c3ahlw5ur13"]
 
+[ext_resource type="Script" uid="uid://b8fhxdtju2bo6" path="res://scripts/change_level.gd" id="1_dcoj2"]
 [ext_resource type="Texture2D" uid="uid://c1716bmewbm6b" path="res://Assets/Custom Border and Panels Menu All Part/Border All 6.png" id="1_wg3pw"]
 [ext_resource type="Texture2D" uid="uid://bocr04yl3gqeo" path="res://Assets/Custom Border and Panels Menu All Part/Deco All 6.png" id="2_0jjpd"]
 [ext_resource type="Script" uid="uid://bmbstirbcouus" path="res://scripts/quit.gd" id="3_0jjpd"]
@@ -1662,6 +1663,7 @@ sources/0 = SubResource("TileSetAtlasSource_k05dx")
 sources/2 = SubResource("TileSetAtlasSource_mcwum")
 
 [node name="ChangeLevel" type="Node2D"]
+script = ExtResource("1_dcoj2")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

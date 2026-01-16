@@ -19,3 +19,4 @@ position = Vector2(0, -14)
 texture = ExtResource("2_4ju1x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -263,6 +263,24 @@ sources/0 = SubResource("TileSetAtlasSource_y3aq0")
 [node name="DeathManager" type="Node2D" parent="."]
 script = ExtResource("1_ik1yt")
 
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 168.0
+offset_top = 487.0
+offset_right = 334.0
+offset_bottom = 517.0
+theme_override_fonts/font = ExtResource("8_y3aq0")
+text = "Click To Jump"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 547.0
+offset_top = 416.0
+offset_right = 885.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("8_y3aq0")
+text = "Jump midair to Double Jump"
+
 [node name="player" parent="." instance=ExtResource("2_b7vm3")]
 position = Vector2(287, 191)
 
@@ -335,21 +353,3 @@ position = Vector2(1424, 223)
 
 [node name="KillZone" parent="." instance=ExtResource("7_3lrk7")]
 position = Vector2(2, 127)
-
-[node name="Label" type="Label" parent="."]
-texture_filter = 1
-offset_left = 168.0
-offset_top = 487.0
-offset_right = 334.0
-offset_bottom = 517.0
-theme_override_fonts/font = ExtResource("8_y3aq0")
-text = "Click To Jump"
-
-[node name="Label2" type="Label" parent="."]
-texture_filter = 1
-offset_left = 547.0
-offset_top = 416.0
-offset_right = 885.0
-offset_bottom = 446.0
-theme_override_fonts/font = ExtResource("8_y3aq0")
-text = "Jump midair to Double Jump"

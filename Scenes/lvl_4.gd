@@ -11,7 +11,7 @@ func _ready():
 	for s in ["normal", "hover", "pressed", "focus", "disabled"]:
 		add_theme_stylebox_override(s, style)
 func _physics_process(delta: float) -> void:
-	if changeLevelGlobal.levelOneComplete == true:
+	if changeLevelGlobal.levelThreeComplete == true:
 		visible = true
 
 func _on_pressed() -> void:

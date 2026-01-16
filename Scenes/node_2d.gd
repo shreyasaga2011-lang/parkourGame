@@ -19,7 +19,7 @@ func _on_lvl_3_pressed() -> void:
 
 
 func _on_lvl_4_pressed() -> void:
-	changeLevelGlobal.changeCurrentLevelToThree()
+	changeLevelGlobal.changeCurrentLevelToFour()
 	get_tree().change_scene_to_file("res://Scenes/level_four.tscn")
 
 

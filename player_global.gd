@@ -22,3 +22,11 @@ func activateJumpPad():
 	JumpPadBool = true
 	await get_tree().create_timer(0.5).timeout
 	JumpPadBool = false
+
+var JumpOrbBool = false
+
+func JumpOrbActivate():
+	JumpOrbBool = true
+
+func JumpOrbDeactivate():
+	JumpOrbBool = false
