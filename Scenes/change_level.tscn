@@ -1742,3 +1742,4 @@ script = ExtResource("3_0jjpd")
 [connection signal="pressed" from="Node2D/Lvl3" to="Node2D" method="_on_lvl_3_pressed"]
 [connection signal="pressed" from="Node2D/Lvl4" to="Node2D" method="_on_lvl_4_pressed"]
 [connection signal="pressed" from="Node2D/Lvl5" to="Node2D" method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="Node2D/Quit" to="Node2D" method="_on_quit_pressed"]

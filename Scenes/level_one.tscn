@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ui48ji7fg6xp"]
+[gd_scene load_steps=14 format=4 uid="uid://ui48ji7fg6xp"]
 
 [ext_resource type="Script" uid="uid://bwf7oxekawf0p" path="res://Scenes/death_manager.gd" id="1_ik1yt"]
 [ext_resource type="PackedScene" uid="uid://wlvliti25dg2" path="res://Scenes/player.tscn" id="2_b7vm3"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://byniqqxv3rsl5" path="res://Scenes/ChangeLevelPortal.tscn" id="5_b7vm3"]
 [ext_resource type="PackedScene" uid="uid://dcdjg5sykqd0f" path="res://Scenes/kill_zone.tscn" id="7_3lrk7"]
 [ext_resource type="FontFile" uid="uid://c73hwbph3ench" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_y3aq0"]
+[ext_resource type="PackedScene" uid="uid://cjiw3bfgy354c" path="res://snow.tscn" id="9_ys0qe"]
+[ext_resource type="PackedScene" uid="uid://dkf4lpp713lkg" path="res://Scenes/fade.tscn" id="10_ep8vc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3aq0"]
 texture = ExtResource("3_3lrk7")
@@ -260,6 +262,16 @@ sources/0 = SubResource("TileSetAtlasSource_y3aq0")
 
 [node name="LevelOne" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -122.0
+offset_top = -62.0
+offset_right = 3766.0
+offset_bottom = 2216.0
+color = Color(0.30455098, 0.64109594, 0.7286557, 1)
+
 [node name="DeathManager" type="Node2D" parent="."]
 script = ExtResource("1_ik1yt")
 
@@ -282,7 +294,7 @@ theme_override_fonts/font = ExtResource("8_y3aq0")
 text = "Jump midair to Double Jump"
 
 [node name="player" parent="." instance=ExtResource("2_b7vm3")]
-position = Vector2(287, 191)
+position = Vector2(133.00002, 140)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -353,3 +365,8 @@ position = Vector2(1424, 223)
 
 [node name="KillZone" parent="." instance=ExtResource("7_3lrk7")]
 position = Vector2(2, 127)
+
+[node name="Snow" parent="." instance=ExtResource("9_ys0qe")]
+position = Vector2(291, -22)
+
+[node name="Fade" parent="." instance=ExtResource("10_ep8vc")]

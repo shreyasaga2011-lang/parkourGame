@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://m76mbbo2o004"]
+[gd_scene load_steps=13 format=4 uid="uid://m76mbbo2o004"]
 
 [ext_resource type="Script" uid="uid://bwf7oxekawf0p" path="res://Scenes/death_manager.gd" id="1_xi0j2"]
 [ext_resource type="PackedScene" uid="uid://wlvliti25dg2" path="res://Scenes/player.tscn" id="2_nljgw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjpx4xmg3jwjh" path="res://Scenes/boost_pad.tscn" id="5_xi0j2"]
 [ext_resource type="PackedScene" uid="uid://dcdjg5sykqd0f" path="res://Scenes/kill_zone.tscn" id="7_0hrgb"]
 [ext_resource type="PackedScene" uid="uid://bcbcly7jhv0gb" path="res://Scenes/spikes.tscn" id="8_nljgw"]
+[ext_resource type="PackedScene" uid="uid://cjiw3bfgy354c" path="res://snow.tscn" id="9_qfl2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gejx0"]
 texture = ExtResource("3_qfl2u")
@@ -246,11 +247,14 @@ sources/1 = SubResource("TileSetAtlasSource_gejx0")
 
 [node name="LevelOne" type="Node2D"]
 
+[node name="Snow" parent="." instance=ExtResource("9_qfl2u")]
+position = Vector2(498, -39)
+
 [node name="DeathManager" type="Node2D" parent="."]
 script = ExtResource("1_xi0j2")
 
 [node name="player" parent="." instance=ExtResource("2_nljgw")]
-position = Vector2(100, 93)
+position = Vector2(100.00001, 62.000008)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

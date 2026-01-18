@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://1gpeqsub6kr"]
 
-[ext_resource type="Script" uid="uid://cycl6kyvhw3kt" path="res://scripts/jump_orb.gd" id="1_ehk5v"]
-[ext_resource type="Texture2D" uid="uid://csphaxalmuvei" path="res://Assets/JumpOrb.png" id="2_vxt61"]
+[ext_resource type="Script" uid="uid://baorc5cg0vd68" path="res://scriptsjump_orb_reverse.gd" id="1_ehk5v"]
+[ext_resource type="Texture2D" uid="uid://bxuqurttorkfx" path="res://Assets/JumpOrbReverse-export.png" id="2_ehk5v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13esl"]
-radius = 10.049875
+radius = 19.026299
 
 [node name="JumpOrbReverse" type="Area2D"]
 collision_mask = 2
@@ -13,7 +13,7 @@ script = ExtResource("1_ehk5v")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("2_vxt61")
+texture = ExtResource("2_ehk5v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjiw3bfgy354c"]
+
+[ext_resource type="Script" uid="uid://bpao02p0ge0sd" path="res://scripts/snow.gd" id="1_ooc8r"]
+[ext_resource type="Script" uid="uid://x2jhpwgs4ghp" path="res://scripts/snow_particles.gd" id="2_5ml6p"]
+
+[node name="Snow" type="Node2D"]
+script = ExtResource("1_ooc8r")
+
+[node name="SnowParticles" type="CPUParticles2D" parent="."]
+amount = 3000
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(10000, 1)
+gravity = Vector2(-100, 500)
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+script = ExtResource("2_5ml6p")

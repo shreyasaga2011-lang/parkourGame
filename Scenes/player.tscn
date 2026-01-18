@@ -1,11 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://wlvliti25dg2"]
+[gd_scene load_steps=13 format=3 uid="uid://wlvliti25dg2"]
 
 [ext_resource type="Script" uid="uid://ccsosgjgeaaa1" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://5o3i1e0k55ej" path="res://Assets/playerSquare-export.png" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://csphaxalmuvei" path="res://Assets/JumpOrb.png" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://cs7tq3crlha2n" path="res://Assets/brush_paper-68648.mp3" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://cot1ns5h2h8bf" path="res://Assets/jumplanding-398256-1_i1eJMpg0.mp3" id="5_fkybt"]
+[ext_resource type="AudioStream" uid="uid://dh0nt5wprtw5v" path="res://Assets/explosion-312361-1_tIweotjL.mp3" id="6_x3wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vgqql"]
 resource_name = "new_animation"
@@ -23,26 +41,19 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fkybt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x3wgy"]
 _data = {
 &"RESET": SubResource("Animation_fkybt"),
 &"new_animation": SubResource("Animation_vgqql")
 }
+
+[sub_resource type="Curve" id="Curve_6t5aa"]
+_data = [Vector2(0.087671235, 0.6450749), 0.0, 0.0, 0, 0, Vector2(0.8000001, 0.2692719), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vgqql"]
+_data = [Vector2(0.076712325, 0.90952885), 0.0, 0.0, 0, 0, Vector2(0.48767123, 0.85385436), 0.0, 0.0, 0, 0, Vector2(0.83561647, 0.10920763), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.8, 0.8)
@@ -51,18 +62,18 @@ script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-52, -53)
+position = Vector2(-0.7500071, -0.5000078)
 texture = ExtResource("2_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(-52, -53)
+position = Vector2(-1.2500038, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(-53.75, -49.999996)
+position = Vector2(-5.364418e-06, -8.225442e-06)
 scale = Vector2(8, 8)
 texture = ExtResource("3_6t5aa")
 
@@ -70,3 +81,110 @@ texture = ExtResource("3_6t5aa")
 libraries = {
 &"": SubResource("AnimationLibrary_x3wgy")
 }
+
+[node name="TrailLeft" type="CPUParticles2D" parent="."]
+position = Vector2(-13.75, 12.500002)
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+amount = 30
+speed_scale = 1.5
+direction = Vector2(-1, -0.4)
+spread = 20.0
+gravity = Vector2(-100, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 3.5
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_6t5aa")
+
+[node name="TrailRight" type="CPUParticles2D" parent="."]
+position = Vector2(12.500002, 12.500002)
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+amount = 30
+speed_scale = 1.5
+direction = Vector2(1, -0.4)
+spread = 20.0
+gravity = Vector2(100, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_min = 3.5
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_6t5aa")
+
+[node name="JumpPadParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 1.5
+one_shot = true
+speed_scale = 2.5
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 7.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_vgqql")
+
+[node name="JumpPadParticles" type="CPUParticles2D" parent="JumpPadParticles"]
+emitting = false
+amount = 20
+lifetime = 1.5
+one_shot = true
+speed_scale = 4.0
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 7.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_vgqql")
+
+[node name="JumpOrbParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 1.5
+one_shot = true
+speed_scale = 2.5
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 7.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_vgqql")
+color = Color(0.24417591, 1, 0.93670744, 1)
+
+[node name="JumpOrbParticlesReverse" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 1.5
+one_shot = true
+speed_scale = 2.5
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 7.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_vgqql")
+color = Color(0.9247165, 0.91180676, 0, 1)
+
+[node name="SFXSki" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vgqql")
+volume_db = 9.0
+
+[node name="JumpAffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fkybt")
+volume_db = 10.0
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_x3wgy")
