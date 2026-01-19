@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ui48ji7fg6xp"]
+[gd_scene load_steps=16 format=4 uid="uid://ui48ji7fg6xp"]
 
 [ext_resource type="Script" uid="uid://bwf7oxekawf0p" path="res://Scenes/death_manager.gd" id="1_ik1yt"]
 [ext_resource type="PackedScene" uid="uid://wlvliti25dg2" path="res://Scenes/player.tscn" id="2_b7vm3"]
@@ -10,6 +10,21 @@
 [ext_resource type="FontFile" uid="uid://c73hwbph3ench" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_y3aq0"]
 [ext_resource type="PackedScene" uid="uid://cjiw3bfgy354c" path="res://snow.tscn" id="9_ys0qe"]
 [ext_resource type="PackedScene" uid="uid://dkf4lpp713lkg" path="res://Scenes/fade.tscn" id="10_ep8vc"]
+[ext_resource type="PackedScene" uid="uid://b7bimiqobcb43" path="res://Scenes/pause_menu.tscn" id="11_tgw3l"]
+
+[sub_resource type="GDScript" id="GDScript_tgw3l"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3aq0"]
 texture = ExtResource("3_3lrk7")
@@ -261,6 +276,7 @@ sources/2 = SubResource("TileSetAtlasSource_6h5vk")
 sources/0 = SubResource("TileSetAtlasSource_y3aq0")
 
 [node name="LevelOne" type="Node2D"]
+script = SubResource("GDScript_tgw3l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -370,3 +386,9 @@ position = Vector2(2, 127)
 position = Vector2(291, -22)
 
 [node name="Fade" parent="." instance=ExtResource("10_ep8vc")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("11_tgw3l")]
+offset_left = -510.0
+offset_top = -87.0
+offset_right = 109.0
+offset_bottom = 282.0

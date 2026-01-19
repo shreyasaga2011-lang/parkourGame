@@ -247,7 +247,6 @@ sources/2 = SubResource("TileSetAtlasSource_6h5vk")
 sources/1 = SubResource("TileSetAtlasSource_gejx0")
 
 [node name="LevelOne" type="Node2D"]
-position = Vector2(0, 22)
 
 [node name="Snow" parent="." instance=ExtResource("8_relrn")]
 position = Vector2(454, -20)
