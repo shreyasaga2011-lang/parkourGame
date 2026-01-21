@@ -1,9 +1,14 @@
 extends CanvasLayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var fade: CanvasLayer = $"."
 
+func _ready() -> void:
+	fade.layer = -3
+	transitionGlobal.doAnim = false 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	if transitionGlobal.doAnim == false:
+		fade.layer = -3
 	if transitionGlobal.doAnim == true:
-		print("asdasdasd")
 		animation_player.play("new_animation")
-		await get_tree().create_timer(0.92).timeout
+		fade.layer = 2

@@ -1,4 +1,6 @@
 extends Control
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_stream_player_2: AudioStreamPlayer = $AudioStreamPlayer2
 
 func _ready():
 	# ALWAYS process - works both paused and unpaused
@@ -33,16 +35,40 @@ func _input(event: InputEvent):
 func _on_resume_pressed()-> void:
 	print("Resume button pressed!")
 	resume()
+	audio_stream_player.play()
 
 func _on_quit_pressed()-> void:
 	print("Quit button pressed!")
 	get_tree().quit()
 
+	
 func _on_restart_pressed()-> void:
 	print("Restart button pressed!")
 	resume()
+	audio_stream_player.play()
 	get_tree().reload_current_scene()
-
+	
+	
 func _on_levels_menu_pressed() -> void:
-	print("Levels menu pressed!")
+	transitionGlobal.doAnimFunc()
+	audio_stream_player.play()
+	await get_tree().create_timer(0.7).timeout
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/change_level.tscn")
+	
+
+
+func _on_resume_mouse_entered() -> void:
+	audio_stream_player_2.play()
+
+
+func _on_restart_mouse_entered() -> void:
+	audio_stream_player_2.play()
+
+
+func _on_levels_menu_mouse_entered() -> void:
+	audio_stream_player_2.play()
+
+
+func _on_quit_mouse_entered() -> void:
+	audio_stream_player_2.play()

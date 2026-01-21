@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3c3ahlw5ur13"]
+[gd_scene load_steps=18 format=3 uid="uid://d3c3ahlw5ur13"]
 
 [ext_resource type="Script" uid="uid://b8fhxdtju2bo6" path="res://scripts/change_level.gd" id="1_dcoj2"]
 [ext_resource type="Texture2D" uid="uid://c1716bmewbm6b" path="res://Assets/Custom Border and Panels Menu All Part/Border All 6.png" id="1_wg3pw"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://byfyml01pb0sd" path="res://Scenes/lvl_4.gd" id="7_dcoj2"]
 [ext_resource type="Script" uid="uid://bl567837qgscr" path="res://Scenes/lvl_5.gd" id="8_t7wl2"]
 [ext_resource type="PackedScene" uid="uid://hkbeddoj12f5" path="res://Scenes/fadeTransition.tscn" id="12_t7wl2"]
+[ext_resource type="AudioStream" uid="uid://b44ii8rbac0cg" path="res://Assets/ui-click-43196.mp3" id="13_r41mk"]
+[ext_resource type="AudioStream" uid="uid://cad2mpedlvviw" path="res://Assets/drumsticks-pro-mark-la-special-2bn-hickory-no4-103712.mp3" id="14_x1ak8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k05dx"]
 texture = ExtResource("1_wg3pw")
@@ -1664,6 +1666,7 @@ sources/0 = SubResource("TileSetAtlasSource_k05dx")
 sources/2 = SubResource("TileSetAtlasSource_mcwum")
 
 [node name="ChangeLevel" type="Node2D"]
+z_index = -4
 script = ExtResource("1_dcoj2")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1675,6 +1678,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(131075, 786432, 13, 196611, 786432, 14, 262147, 786432, 15, 589827, 786432, 13, 655363, 786432, 14, 720899, 786432, 15, 131076, 851968, 13, 196612, 851968, 14, 262148, 851968, 15, 589828, 851968, 13, 655364, 851968, 14, 720900, 851968, 15, 131077, 917504, 13, 196613, 917504, 14, 262149, 917504, 15, 589829, 917504, 13, 655365, 917504, 14, 720901, 917504, 15, 131078, 917504, 13, 196614, 917504, 14, 262150, 917504, 15, 589830, 917504, 13, 655366, 917504, 14, 720902, 917504, 15, 131079, 983040, 13, 196615, 983040, 14, 262151, 983040, 15, 589831, 983040, 13, 655367, 983040, 14, 720903, 983040, 15, 131083, 786432, 13, 196619, 786432, 14, 262155, 786432, 15, 589835, 786432, 13, 655371, 786432, 14, 720907, 786432, 15, 131084, 851968, 13, 196620, 851968, 14, 262156, 851968, 15, 589836, 851968, 13, 655372, 851968, 14, 720908, 851968, 15, 131085, 917504, 13, 196621, 917504, 14, 262157, 917504, 15, 589837, 917504, 13, 655373, 917504, 14, 720909, 917504, 15, 131086, 917504, 13, 196622, 917504, 14, 262158, 917504, 15, 589838, 917504, 13, 655374, 917504, 14, 720910, 917504, 15, 131087, 983040, 13, 196623, 983040, 14, 262159, 983040, 15, 589839, 983040, 13, 655375, 983040, 14, 720911, 983040, 15, 131091, 786432, 13, 196627, 786432, 14, 262163, 786432, 15, 589843, 786432, 13, 655379, 786432, 14, 720915, 786432, 15, 131092, 851968, 13, 196628, 851968, 14, 262164, 851968, 15, 589844, 851968, 13, 655380, 851968, 14, 720916, 851968, 15, 131093, 917504, 13, 196629, 917504, 14, 262165, 917504, 15, 589845, 917504, 13, 655381, 917504, 14, 720917, 917504, 15, 131094, 917504, 13, 196630, 917504, 14, 262166, 917504, 15, 589846, 917504, 13, 655382, 917504, 14, 720918, 917504, 15, 131095, 983040, 13, 196631, 983040, 14, 262167, 983040, 15, 589847, 983040, 13, 655383, 983040, 14, 720919, 983040, 15, 65539, 786432, 12, 524291, 786432, 12, 65540, 851968, 12, 524292, 851968, 12, 65541, 917504, 12, 524293, 917504, 12, 65542, 917504, 12, 524294, 917504, 12, 65543, 983040, 12, 524295, 983040, 12, 65547, 786432, 12, 524299, 786432, 12, 65548, 851968, 12, 524300, 851968, 12, 65549, 917504, 12, 524301, 917504, 12, 65550, 917504, 12, 524302, 917504, 12, 65551, 983040, 12, 524303, 983040, 12, 65555, 786432, 12, 524307, 786432, 12, 65556, 851968, 12, 524308, 851968, 12, 65557, 917504, 12, 524309, 917504, 12, 65558, 917504, 12, 524310, 917504, 12, 65559, 983040, 12, 524311, 983040, 12)
 
 [node name="Node2D" type="Node2D" parent="."]
+z_index = 4
 script = ExtResource("3_kyb5r")
 
 [node name="Lvl1" type="Button" parent="Node2D"]
@@ -1739,10 +1743,34 @@ text = "Quit"
 script = ExtResource("3_0jjpd")
 
 [node name="Fade" parent="." instance=ExtResource("12_t7wl2")]
+layer = -3
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_r41mk")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_x1ak8")
+volume_db = -30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -122.0
+offset_top = -62.0
+offset_right = 3766.0
+offset_bottom = 2216.0
+color = Color(0.30455098, 0.64109594, 0.7286557, 1)
+
+[connection signal="mouse_entered" from="Node2D/Lvl1" to="." method="_on_lvl_1_mouse_entered"]
 [connection signal="pressed" from="Node2D/Lvl1" to="Node2D" method="_on_lvl_1_pressed"]
+[connection signal="mouse_entered" from="Node2D/Lvl2" to="." method="_on_lvl_2_mouse_entered"]
 [connection signal="pressed" from="Node2D/Lvl2" to="Node2D" method="_on_lvl_2_pressed"]
+[connection signal="mouse_entered" from="Node2D/Lvl3" to="." method="_on_lvl_3_mouse_entered"]
 [connection signal="pressed" from="Node2D/Lvl3" to="Node2D" method="_on_lvl_3_pressed"]
+[connection signal="mouse_entered" from="Node2D/Lvl4" to="." method="_on_lvl_4_mouse_entered"]
 [connection signal="pressed" from="Node2D/Lvl4" to="Node2D" method="_on_lvl_4_pressed"]
+[connection signal="mouse_entered" from="Node2D/Lvl5" to="." method="_on_lvl_5_mouse_entered"]
 [connection signal="pressed" from="Node2D/Lvl5" to="Node2D" method="_on_lvl_5_pressed"]
+[connection signal="mouse_entered" from="Node2D/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Node2D/Quit" to="Node2D" method="_on_quit_pressed"]

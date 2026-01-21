@@ -1,7 +1,7 @@
 extends Node
 
-var levelOneComplete = true
-var levelTwoComplete = true
+var levelOneComplete = false
+var levelTwoComplete = false
 var levelThreeComplete = false
 var levelFourComplete = false
 var levelFiveComplete = false

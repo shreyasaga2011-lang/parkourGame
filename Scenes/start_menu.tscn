@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ditkhf1urhp6q"]
+[gd_scene load_steps=12 format=3 uid="uid://ditkhf1urhp6q"]
 
 [ext_resource type="Texture2D" uid="uid://dymbaw7iy43q3" path="res://Assets/Custom Border and Panels Menu All Part/Border All 1.png" id="1_jgtwh"]
 [ext_resource type="Texture2D" uid="uid://c1716bmewbm6b" path="res://Assets/Custom Border and Panels Menu All Part/Border All 6.png" id="2_m6uer"]
 [ext_resource type="FontFile" uid="uid://b8ge1sowthmnf" path="res://Assets/cormorant-sc-bold-font/cormorantsc-bold.ttf" id="3_a43kq"]
 [ext_resource type="Script" uid="uid://sckfh812g07e" path="res://scripts/levels.gd" id="3_m6uer"]
 [ext_resource type="Script" uid="uid://bmbstirbcouus" path="res://scripts/quit.gd" id="5_626he"]
+[ext_resource type="PackedScene" uid="uid://hkbeddoj12f5" path="res://Scenes/fadeTransition.tscn" id="6_8u0lp"]
+[ext_resource type="AudioStream" uid="uid://b44ii8rbac0cg" path="res://Assets/ui-click-43196.mp3" id="7_i2i62"]
+[ext_resource type="AudioStream" uid="uid://cad2mpedlvviw" path="res://Assets/drumsticks-pro-mark-la-special-2bn-hickory-no4-103712.mp3" id="8_lfskg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8t80"]
 texture = ExtResource("1_jgtwh")
@@ -2610,5 +2613,26 @@ theme_override_font_sizes/font_size = 100
 text = "QUIT"
 script = ExtResource("5_626he")
 
+[node name="Fade" parent="." instance=ExtResource("6_8u0lp")]
+layer = -2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_i2i62")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lfskg")
+volume_db = -30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AudioStreamPlayer2"]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="AudioStreamPlayer2/CanvasLayer"]
+offset_left = -122.0
+offset_top = -62.0
+offset_right = 3766.0
+offset_bottom = 2216.0
+color = Color(0.30455098, 0.64109594, 0.7286557, 1)
+
+[connection signal="mouse_entered" from="Levels" to="Levels" method="_on_mouse_entered"]
 [connection signal="pressed" from="Levels" to="Levels" method="_on_pressed"]
 [connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

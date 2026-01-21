@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7bimiqobcb43"]
+[gd_scene load_steps=12 format=3 uid="uid://b7bimiqobcb43"]
 
 [ext_resource type="Script" uid="uid://sy4h13h7yx5q" path="res://Scenes/pause_menu.gd" id="1_emv3i"]
 [ext_resource type="Shader" uid="uid://c7csyrrwgyrxs" path="res://Scenes/pause_menu.gdshader" id="2_k0w1u"]
 [ext_resource type="Texture2D" uid="uid://q7fnn38to4w0" path="res://Assets/pauseMenuButtonSprite.png" id="3_1och7"]
 [ext_resource type="FontFile" uid="uid://b8ge1sowthmnf" path="res://Assets/cormorant-sc-bold-font/cormorantsc-bold.ttf" id="4_bpi0q"]
+[ext_resource type="PackedScene" uid="uid://hkbeddoj12f5" path="res://Scenes/fadeTransition.tscn" id="5_vmyb1"]
+[ext_resource type="AudioStream" uid="uid://b44ii8rbac0cg" path="res://Assets/ui-click-43196.mp3" id="6_myy0f"]
+[ext_resource type="AudioStream" uid="uid://cad2mpedlvviw" path="res://Assets/drumsticks-pro-mark-la-special-2bn-hickory-no4-103712.mp3" id="7_sjs17"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1och7"]
 shader = ExtResource("2_k0w1u")
@@ -425,6 +428,7 @@ grow_vertical = 2
 script = ExtResource("1_emv3i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 material = SubResource("ShaderMaterial_1och7")
 layout_mode = 0
 offset_left = -30.0
@@ -441,6 +445,7 @@ offset_bottom = 1483.0
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 2
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -518,7 +523,21 @@ libraries = {
 &"": SubResource("AnimationLibrary_bpi0q")
 }
 
+[node name="Fade" parent="." instance=ExtResource("5_vmyb1")]
+layer = -3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_myy0f")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sjs17")
+volume_db = -30.0
+
+[connection signal="mouse_entered" from="PanelContainer/GridContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/GridContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/GridContainer/Restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/GridContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/GridContainer/Levels Menu" to="." method="_on_levels_menu_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/GridContainer/Levels Menu" to="." method="_on_levels_menu_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/GridContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/GridContainer/Quit" to="." method="_on_quit_pressed"]

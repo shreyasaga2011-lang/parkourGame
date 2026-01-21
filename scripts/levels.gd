@@ -1,9 +1,15 @@
 extends Button
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
+@onready var audio_stream_player_2: AudioStreamPlayer = $"../AudioStreamPlayer2"
 
 
 
 func _on_pressed() -> void:
+	transitionGlobal.doAnimFunc()
+	audio_stream_player.play()
+	await get_tree().create_timer(0.7).timeout
 	get_tree().change_scene_to_file("res://Scenes/change_level.tscn")
+	
 
 
 func _ready():
@@ -16,3 +22,7 @@ func _ready():
 
 	for s in ["normal", "hover", "pressed", "focus", "disabled"]:
 		add_theme_stylebox_override(s, style)
+
+
+func _on_mouse_entered() -> void:
+	audio_stream_player_2.play()
