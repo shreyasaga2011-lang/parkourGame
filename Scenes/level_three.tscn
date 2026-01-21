@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://m76mbbo2o004"]
+[gd_scene load_steps=16 format=4 uid="uid://m76mbbo2o004"]
 
 [ext_resource type="Script" uid="uid://bwf7oxekawf0p" path="res://Scenes/death_manager.gd" id="1_xi0j2"]
 [ext_resource type="PackedScene" uid="uid://wlvliti25dg2" path="res://Scenes/player.tscn" id="2_nljgw"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dcdjg5sykqd0f" path="res://Scenes/kill_zone.tscn" id="7_0hrgb"]
 [ext_resource type="PackedScene" uid="uid://bcbcly7jhv0gb" path="res://Scenes/spikes.tscn" id="8_nljgw"]
 [ext_resource type="PackedScene" uid="uid://cjiw3bfgy354c" path="res://snow.tscn" id="9_qfl2u"]
+[ext_resource type="FontFile" uid="uid://c73hwbph3ench" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="10_hbnvb"]
+[ext_resource type="PackedScene" uid="uid://b7bimiqobcb43" path="res://Scenes/pause_menu.tscn" id="11_5coyv"]
+[ext_resource type="PackedScene" uid="uid://cnepk505hbqqa" path="res://Scenes/corner_buttons.tscn" id="12_0hrgb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gejx0"]
 texture = ExtResource("3_qfl2u")
@@ -247,6 +250,16 @@ sources/1 = SubResource("TileSetAtlasSource_gejx0")
 
 [node name="LevelOne" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -122.0
+offset_top = -62.0
+offset_right = 3766.0
+offset_bottom = 2216.0
+color = Color(0.30455098, 0.64109594, 0.7286557, 1)
+
 [node name="Snow" parent="." instance=ExtResource("9_qfl2u")]
 position = Vector2(498, -39)
 
@@ -287,7 +300,7 @@ position = Vector2(496, 782)
 position = Vector2(464, 782)
 
 [node name="BoostPad5" parent="." instance=ExtResource("5_xi0j2")]
-position = Vector2(432, 782)
+position = Vector2(422, 785)
 
 [node name="BoostPad6" parent="." instance=ExtResource("5_xi0j2")]
 position = Vector2(400, 782)
@@ -330,3 +343,25 @@ rotation = 1.5707964
 [node name="Spikes2" parent="." instance=ExtResource("8_nljgw")]
 position = Vector2(480, 659)
 rotation = 3.1415927
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 274.0
+offset_top = 552.0
+offset_right = 578.0
+offset_bottom = 606.0
+theme_override_fonts/font = ExtResource("10_hbnvb")
+text = "Click While on 
+Jump Pads to 
+get Launched"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("11_5coyv")]
+offset_left = -510.0
+offset_top = -87.0
+offset_right = 109.0
+offset_bottom = 282.0
+
+[node name="CornerButtons" parent="CanvasLayer2" instance=ExtResource("12_0hrgb")]
+position = Vector2(144, 32)

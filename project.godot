@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 playerGlobal="*res://player_global.gd"
 changeLevelGlobal="*res://change_level_global.gd"
 TutorialWords="*res://tutorial_words.gd"
+transitionGlobal="*res://transition_global.gd"
 
 [editor_plugins]
 

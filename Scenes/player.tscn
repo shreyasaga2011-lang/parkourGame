@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wlvliti25dg2"]
+[gd_scene load_steps=15 format=3 uid="uid://wlvliti25dg2"]
 
 [ext_resource type="Script" uid="uid://ccsosgjgeaaa1" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://5o3i1e0k55ej" path="res://Assets/playerSquare-export.png" id="2_cvnsp"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://cs7tq3crlha2n" path="res://Assets/brush_paper-68648.mp3" id="4_vgqql"]
 [ext_resource type="AudioStream" uid="uid://cot1ns5h2h8bf" path="res://Assets/jumplanding-398256-1_i1eJMpg0.mp3" id="5_fkybt"]
 [ext_resource type="AudioStream" uid="uid://dh0nt5wprtw5v" path="res://Assets/explosion-312361-1_tIweotjL.mp3" id="6_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://cdbxnr2luctmm" path="res://Assets/Bing-Videos-and-7-more-pages-Personal-Microsoft_-Edge-2026-01-19-22-56-37.mp3" id="7_3smsa"]
+[ext_resource type="AudioStream" uid="uid://cb8oyudtdf43x" path="res://Assets/SumBunsSFX.mp3" id="8_8erm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(32, 32)
@@ -188,3 +190,9 @@ volume_db = 10.0
 
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_x3wgy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_3smsa")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8erm5")

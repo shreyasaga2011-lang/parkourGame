@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3c3ahlw5ur13"]
+[gd_scene load_steps=16 format=3 uid="uid://d3c3ahlw5ur13"]
 
 [ext_resource type="Script" uid="uid://b8fhxdtju2bo6" path="res://scripts/change_level.gd" id="1_dcoj2"]
 [ext_resource type="Texture2D" uid="uid://c1716bmewbm6b" path="res://Assets/Custom Border and Panels Menu All Part/Border All 6.png" id="1_wg3pw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://d13vn2u7jo2no" path="res://Scenes/lvl_3.gd" id="6_kyb5r"]
 [ext_resource type="Script" uid="uid://byfyml01pb0sd" path="res://Scenes/lvl_4.gd" id="7_dcoj2"]
 [ext_resource type="Script" uid="uid://bl567837qgscr" path="res://Scenes/lvl_5.gd" id="8_t7wl2"]
+[ext_resource type="PackedScene" uid="uid://hkbeddoj12f5" path="res://Scenes/fadeTransition.tscn" id="12_t7wl2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k05dx"]
 texture = ExtResource("1_wg3pw")
@@ -1736,6 +1737,8 @@ theme_override_fonts/font = ExtResource("3_mcwum")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 script = ExtResource("3_0jjpd")
+
+[node name="Fade" parent="." instance=ExtResource("12_t7wl2")]
 
 [connection signal="pressed" from="Node2D/Lvl1" to="Node2D" method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="Node2D/Lvl2" to="Node2D" method="_on_lvl_2_pressed"]

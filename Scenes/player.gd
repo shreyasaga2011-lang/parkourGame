@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var sfx_ski: AudioStreamPlayer2D = $SFXSki
 @onready var jump_affect: AudioStreamPlayer2D = $JumpAffect
 @onready var explosion: AudioStreamPlayer2D = $Explosion
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_stream_player_2: AudioStreamPlayer = $AudioStreamPlayer2
 
 const SPEED = 250.0
 var JUMP_VELOCITY = -350.0
@@ -21,8 +23,6 @@ var was_on_floor := false
 
 func _physics_process(delta: float) -> void:
 	var on_floor := is_on_floor()
-	if playerGlobal.alive == false:
-		explosion.play()
 	if on_floor and not sfx_ski.playing:
 		sfx_ski.volume_db = -24
 		sfx_ski.play()
@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	
 	if playerGlobal.JumpPadBool == true:
 		JUMP_VELOCITY = -1000
-		MAX_JUMPS = 1
+		MAX_JUMPS = 2
 	if playerGlobal.JumpPadBool == false:
 		JUMP_VELOCITY = -350
 	if playerGlobal.JumpOrbBool == true:
@@ -77,6 +77,7 @@ func _physics_process(delta: float) -> void:
 	if playerGlobal.JumpOrbBool == false:
 		counter = 0
 
+
 	
 	if Input.is_action_just_pressed("jump") and jumps < MAX_JUMPS:
 		jump_affect.play()
@@ -85,13 +86,16 @@ func _physics_process(delta: float) -> void:
 		if playerGlobal.JumpPadBool:
 			jump_pad_particles.restart()
 			jump_pad_particles.emitting = true
+			explosion.play()
 		if playerGlobal.JumpOrbBool and !playerGlobal.JumpOrbBoolReverse:
 			jump_orb_particles.restart()
 			jump_orb_particles.emitting = true
+			audio_stream_player_2.play()
 		if playerGlobal.JumpOrbBool and playerGlobal.JumpOrbBoolReverse:
 			jump_orb_particles_reverse.restart()
 			jump_orb_particles_reverse.emitting = true
 			playerGlobal.makeReverse()
+			audio_stream_player.play()
 		
 	
 	move_and_slide()

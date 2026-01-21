@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c7fwp0n5201eo"]
+[gd_scene load_steps=15 format=4 uid="uid://c7fwp0n5201eo"]
 
 [ext_resource type="Script" uid="uid://bwf7oxekawf0p" path="res://Scenes/death_manager.gd" id="1_8jpcs"]
 [ext_resource type="Script" uid="uid://gqf4353rvy6" path="res://Scenes/level_two.gd" id="1_gejx0"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://byniqqxv3rsl5" path="res://Scenes/ChangeLevelPortal.tscn" id="5_gejx0"]
 [ext_resource type="PackedScene" uid="uid://dcdjg5sykqd0f" path="res://Scenes/kill_zone.tscn" id="6_7ycwu"]
 [ext_resource type="PackedScene" uid="uid://cjiw3bfgy354c" path="res://snow.tscn" id="8_t1jg6"]
+[ext_resource type="PackedScene" uid="uid://b7bimiqobcb43" path="res://Scenes/pause_menu.tscn" id="10_lamej"]
+[ext_resource type="PackedScene" uid="uid://cnepk505hbqqa" path="res://Scenes/corner_buttons.tscn" id="11_ahq5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gejx0"]
 texture = ExtResource("3_t1jg6")
@@ -248,6 +250,16 @@ sources/1 = SubResource("TileSetAtlasSource_gejx0")
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_gejx0")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -122.0
+offset_top = -62.0
+offset_right = 3766.0
+offset_bottom = 2216.0
+color = Color(0.30455098, 0.64109594, 0.7286557, 1)
+
 [node name="DeathManager" type="Node2D" parent="."]
 script = ExtResource("1_8jpcs")
 
@@ -329,3 +341,14 @@ position = Vector2(0, -1)
 
 [node name="Snow" parent="." instance=ExtResource("8_t1jg6")]
 position = Vector2(395, -106)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("10_lamej")]
+offset_left = -510.0
+offset_top = -87.0
+offset_right = 109.0
+offset_bottom = 282.0
+
+[node name="CornerButtons" parent="CanvasLayer2" instance=ExtResource("11_ahq5a")]
+position = Vector2(144, 32)

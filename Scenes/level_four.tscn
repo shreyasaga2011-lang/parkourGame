@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://pi4cqmrcjnt7"]
+[gd_scene load_steps=17 format=4 uid="uid://pi4cqmrcjnt7"]
 
 [ext_resource type="Script" uid="uid://bwf7oxekawf0p" path="res://Scenes/death_manager.gd" id="1_relrn"]
 [ext_resource type="PackedScene" uid="uid://wlvliti25dg2" path="res://Scenes/player.tscn" id="2_r1qxl"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bcbcly7jhv0gb" path="res://Scenes/spikes.tscn" id="7_r1qxl"]
 [ext_resource type="PackedScene" uid="uid://dcdjg5sykqd0f" path="res://Scenes/kill_zone.tscn" id="8_ko7jo"]
 [ext_resource type="PackedScene" uid="uid://cjiw3bfgy354c" path="res://snow.tscn" id="8_relrn"]
+[ext_resource type="FontFile" uid="uid://c73hwbph3ench" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="11_e2sv8"]
+[ext_resource type="PackedScene" uid="uid://b7bimiqobcb43" path="res://Scenes/pause_menu.tscn" id="12_nespj"]
+[ext_resource type="PackedScene" uid="uid://cnepk505hbqqa" path="res://Scenes/corner_buttons.tscn" id="13_1gte4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gejx0"]
 texture = ExtResource("3_ko7jo")
@@ -248,6 +251,16 @@ sources/1 = SubResource("TileSetAtlasSource_gejx0")
 
 [node name="LevelOne" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -122.0
+offset_top = -62.0
+offset_right = 3766.0
+offset_bottom = 2216.0
+color = Color(0.30455098, 0.64109594, 0.7286557, 1)
+
 [node name="Snow" parent="." instance=ExtResource("8_relrn")]
 position = Vector2(454, -20)
 
@@ -417,3 +430,24 @@ position = Vector2(875, 80)
 
 [node name="JumpOrb3" parent="." instance=ExtResource("5_hsiw5")]
 position = Vector2(1262, 91)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 28.0
+offset_top = 154.0
+offset_right = 332.0
+offset_bottom = 208.0
+theme_override_fonts/font = ExtResource("11_e2sv8")
+text = "Jump Orbs Give you
+an Extra Jump Midair"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("12_nespj")]
+offset_left = -510.0
+offset_top = -87.0
+offset_right = 109.0
+offset_bottom = 282.0
+
+[node name="CornerButtons" parent="CanvasLayer2" instance=ExtResource("13_1gte4")]
+position = Vector2(144, 32)
