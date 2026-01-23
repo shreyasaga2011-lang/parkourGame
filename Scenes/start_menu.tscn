@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ditkhf1urhp6q"]
+[gd_scene load_steps=13 format=3 uid="uid://ditkhf1urhp6q"]
 
 [ext_resource type="Texture2D" uid="uid://dymbaw7iy43q3" path="res://Assets/Custom Border and Panels Menu All Part/Border All 1.png" id="1_jgtwh"]
+[ext_resource type="Script" uid="uid://b6hwuioxqfmq6" path="res://Scenes/start_menu.gd" id="1_ru7em"]
 [ext_resource type="Texture2D" uid="uid://c1716bmewbm6b" path="res://Assets/Custom Border and Panels Menu All Part/Border All 6.png" id="2_m6uer"]
 [ext_resource type="FontFile" uid="uid://b8ge1sowthmnf" path="res://Assets/cormorant-sc-bold-font/cormorantsc-bold.ttf" id="3_a43kq"]
 [ext_resource type="Script" uid="uid://sckfh812g07e" path="res://scripts/levels.gd" id="3_m6uer"]
@@ -2580,6 +2581,7 @@ sources/0 = SubResource("TileSetAtlasSource_b8t80")
 sources/1 = SubResource("TileSetAtlasSource_t6kw3")
 
 [node name="startMenu" type="Node2D"]
+script = ExtResource("1_ru7em")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

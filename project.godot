@@ -22,6 +22,12 @@ TutorialWords="*res://tutorial_words.gd"
 transitionGlobal="*res://transition_global.gd"
 FadeTransitionGlobal="*res://fade_transition.gd"
 
+[display]
+
+window/size/viewport_width=2550
+window/size/viewport_height=1300
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
